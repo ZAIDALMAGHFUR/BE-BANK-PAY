@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Apanih;
 use Illuminate\Http\Request;
 use App\Models\Transaction;
 

@@ -54,7 +54,11 @@ class TopUpController extends Controller
                 'payment_method' => $paymentMethod->code
             ]);
 
+
+
+
             $midtrans = $this->callMidtrans($params);
+            
             
             DB::commit();
 
@@ -76,6 +80,7 @@ class TopUpController extends Controller
         \Midtrans\Config::$is3ds = (bool) env('MIDTRANS_IS_3DS', true);
         $createTransaction = \Midtrans\Snap::createTransaction($params);
         // return [$params];
+
 
         return [
             'redirect_url' => $createTransaction->redirect_url,
